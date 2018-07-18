@@ -17,7 +17,7 @@
   </div>
 </div>
 
-<div *ngIf="this.loaded == true && this.error == false" id="stats">
+<div *ngIf="this.loaded == true && this.error == false">
   <div id="user-info-card" class="card">
     <div class="container">
       <div class="row">
@@ -54,7 +54,7 @@
     </div>
   </div>
     
-  <div *ngIf="this.overview == true" class="container">
+  <div *ngIf="this.overview == true" class="container" id="stats">
     <div class="row">
       <div class="col-md-8">
         <div class="row overall">
@@ -226,7 +226,7 @@
     <h3>No Stats Available</h3>
   </ng-template>
 
-  <div *ngIf="this.overview == false" class="container">
+  <div *ngIf="this.overview == false" class="container" id="recent-matches">
     <div class="card">
       <div class="container">
         <div class="card-body">
@@ -235,4 +235,10 @@
       </div>
     </div>
   </div>
+
+  <footer class="footer">
+    <div class="container">
+      <a tabindex="0" role="button" id="contact-button" class="float-right" data-trigger="focus" data-toggle="popover" data-placement="top" title="Contact Email" data-content="contact@fortnite-statistics.com" onmousedown="$(this).popover('show')">Contact Us</a>
+    </div>
+  </footer>
 </div>
