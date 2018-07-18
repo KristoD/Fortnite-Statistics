@@ -132,6 +132,10 @@ input {
     color: rgba(255,255,255,0.7);
 }
 
+.footer a:hover {
+    cursor: pointer;
+}
+
 @media only screen and (max-height: 610px) {
     #choose {
         margin-top: 50px;

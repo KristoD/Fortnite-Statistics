@@ -226,6 +226,10 @@ h3 {
     color: rgba(255,255,255,0.7);
 }
 
+.footer a:hover {
+    cursor: pointer;
+}
+
 /* @media (max-width: 765px) {
     #stats-row {
         width: calc(25% - 4px);
