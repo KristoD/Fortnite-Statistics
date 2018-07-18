@@ -2,9 +2,22 @@
     color: white;
 }
 
-::ng-deep body, html {
+/* ::ng-deep body, html {
     height: 100%;
     position: relative;
+} */
+
+::ng-deep html {
+    height: 100%;
+    box-sizing: border-box
+}
+
+::ng-deep body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 60px;
+    min-height: 100%;
+
 }
 
 figure {  
@@ -215,7 +228,9 @@ h3 {
 
 .footer {
     position: absolute;
+    right: 0;
     bottom: 0;
+    left: 0;
     width: 100%;
     height: 60px;
     line-height: 60px;
