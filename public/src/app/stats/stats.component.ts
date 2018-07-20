@@ -13,6 +13,7 @@ export class StatsComponent implements OnInit {
   
   season: String;
   playerStats: String;
+  platformName: String;
   dropdownItems: String;
   
   info: any;
@@ -29,6 +30,7 @@ export class StatsComponent implements OnInit {
   ngOnInit() {
     this.info = {};
     this.newsObj = {};
+    this.platformName = "PC";
     this.loaded = false;
     this.error = false;
     this.overview = true;
@@ -62,7 +64,12 @@ export class StatsComponent implements OnInit {
     this._httpService.getStats()
     .subscribe((data) => {
       this.info = data;
-      console.log(this.info);
+      if (this.info.platformName == "psn") {
+        this.platformName = "PS4";
+      }
+      if (this.info.platformName == "xbox") {
+        this.platformName = "Xbox";
+      }
       if(this.info.error) {
         this.error = true;
       }
