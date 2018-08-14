@@ -225,6 +225,24 @@ h3 {
     text-align: center;
 }
 
+.match-row {
+    padding: 30px 20px 15px 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #8a949e;
+}
+
+.match-values {
+    font-size: 23px;
+}
+
+.match-keys {
+    font-size: 20px;
+}
+
+.match-icon {
+    font-size: 27px;
+}
+
 /* @media (max-width: 765px) {
     #stats-row {
         width: calc(25% - 4px);

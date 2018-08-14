@@ -18,6 +18,7 @@ export class StatsComponent implements OnInit {
   
   info: any;
   newsObj: any;
+  recentMatches: any[];
   overallStats: any[];
   soloStats: any[];
   soloS5Stats: any[];
@@ -47,6 +48,7 @@ export class StatsComponent implements OnInit {
     this.duoS5Stats = [];
     this.squadStats = [];
     this.squadS5Stats = [];
+    this.recentMatches = [];
     this.stats();
     this.news();
   }
@@ -63,6 +65,7 @@ export class StatsComponent implements OnInit {
     var self = this;
     this._httpService.getStats()
     .subscribe((data) => {
+      console.log(data);
       this.info = data;
       if (this.info.platformName == "psn") {
         this.platformName = "PS4";
@@ -83,6 +86,7 @@ export class StatsComponent implements OnInit {
       this.getDuoS5Stats();
       this.getSquadS4Stats();
       this.getSquadS5Stats();
+      this.getRecentMatches();
     });
   }
 
@@ -249,6 +253,20 @@ export class StatsComponent implements OnInit {
       this.squadS5Stats.push([this.info.stats.curr_p9.kills.label, this.info.stats.curr_p9.kills.value, this.numberWithCommas(this.info.stats.curr_p9.kills.rank)])
       this.squadS5Stats.push([this.info.stats.curr_p9.kpg.label, this.info.stats.curr_p9.kpg.value, this.numberWithCommas(this.info.stats.curr_p9.kpg.rank)])
       this.squadS5Stats.push(["K/D", this.info.stats.curr_p9.kd.value, this.numberWithCommas(this.info.stats.curr_p9.kd.rank)])
+    }
+  }
+
+  getRecentMatches() {
+    if(this.info.recentMatches) {
+      this.recentMatches = this.info.recentMatches;
+      for(var i = 0; i < this.recentMatches.length; i++) {
+        let date = new Date(this.recentMatches[i].dateCollected).toLocaleString("en-US", {
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric'
+        });
+        this.recentMatches[i].dateCollected = date;
+      }
     }
   }
 }

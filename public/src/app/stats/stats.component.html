@@ -176,7 +176,7 @@
                 <div *ngIf="this.season == 'season 4'">
                   <div *ngIf="this.info.stats.p9; else no_stats">
                     <div class="solo-plus-stats" style="display: inline-block" *ngFor="let stats of this.squadStats">
-                      <div style="display: inline-block" class="col-md-12" data-toggle="tooltip" data-placement="top" title="Rank: {{ stats[2] }}" onmouseenter="$(this).tooltip('show')">
+                      <div style="display: inline-block" class="col-md-12" data-toggle="tooltip" data-placement="top" title="Rank: {{ stats[2] }}" onmouseenter="$(this).tooltip('show')" onclick="void(0);">
                         <p class="stats-values">{{ stats[1] }}</p>
                         <div class="progress">
                           <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -228,10 +228,51 @@
 
   <div *ngIf="this.overview == false" class="container" id="recent-matches">
     <div class="card">
-      <div class="container">
-        <div class="card-body">
-          <h1>Coming soon!</h1>
+      <div class="card-body">
+        <div *ngFor="let match of this.recentMatches" class="test">
+          <div class="row match-row">
+            <div class="col-4 col-md-2">
+              <div *ngIf="match.platform == 3">
+                <span id="platform">PC</span>
+              </div>
+              <div *ngIf="match.platform == 2">
+                <span id="platform">PS4</span>
+              </div>
+              <div *ngIf="match.platform == 1">
+                <span id="platform">Xbox</span>
+              </div>
+            </div>
+            <div class="col-4 col-md-2">
+              <div *ngIf="match.playlist == 'p2'">
+                  <i class="fa fa-user match-icon"></i>
+              </div>
+              <div *ngIf="match.playlist == 'p9'">
+                  <i class="fa fa-users match-icon"></i>
+              </div>
+              <div *ngIf="match.playlist == 'p10'">
+                  <i class="fa fa-user-friends match-icon"></i>
+              </div>
+              <p class="stats-values stats-key match-keys">Mode</p>
+            </div>
+            <div class="col-4 col-md-2">
+              <p class="stats-values match-values">{{ match.top1 }}</p>
+              <p class="stats-values stats-key match-keys">Wins</p>
+            </div>
+            <div class="col-4 col-md-2">
+              <p class="stats-values match-values">+{{ match.score }}</p>
+              <p class="stats-values stats-key match-keys">Score</p>
+            </div>
+            <div class="col-4 col-md-2">
+              <p class="stats-values match-values">{{ match.kills }}</p>
+              <p class="stats-values stats-key match-keys">Kills</p>
+            </div>
+            <div class="col-4 col-md-2">
+              <p class="stats-values match-values">{{ match.dateCollected }}</p>
+              <p class="stats-values stats-key match-keys">Date</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
