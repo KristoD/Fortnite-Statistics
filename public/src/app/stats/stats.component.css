@@ -32,7 +32,7 @@ figure img {
 }
 
 .news-body {
-    margin: -12% 0;
+    margin: 5% 0;
 }
 
 .news-header {
@@ -41,7 +41,7 @@ figure img {
 }
   
 .ratio img {
-    margin: -9%;
+    margin: 2%;
 }
 
 #loader {
@@ -269,7 +269,7 @@ h3 {
         width:250px;
     }
     .ratio img {
-        margin: -9%;
+        margin: 2%;
     }
 
 }
