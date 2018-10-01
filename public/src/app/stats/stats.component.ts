@@ -36,10 +36,10 @@ export class StatsComponent implements OnInit {
     this.error = false;
     this.overview = true;
 
-    this.season = "season 5";
+    this.season = "season 6";
     this.playerStats = "overall";
 
-    this.dropdownItems = "Season 5";
+    this.dropdownItems = "Season 6";
 
     this.overallStats = [];
     this.soloStats = [];

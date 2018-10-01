@@ -30,8 +30,8 @@
                 {{ this.dropdownItems }}
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <button class="dropdown-item" type="button" (click)="this.season = 'season 5'; this.dropdownItems = 'Season 5'">Season 5</button>
-                <button *ngIf="this.info.stats.p2 || this.info.stats.p9 || this.info.stats.p10" class="dropdown-item" type="button" (click)="this.season = 'season 4'; this.dropdownItems = 'Season 4'">Season 4</button>
+                <button class="dropdown-item" type="button" (click)="this.season = 'season 6'; this.dropdownItems = 'Season 6'">Season 6</button>
+                <button *ngIf="this.info.stats.p2 || this.info.stats.p9 || this.info.stats.p10" class="dropdown-item" type="button" (click)="this.season = 'season 5'; this.dropdownItems = 'Season 5'">Season 5</button>
               </div>
             </div>
           </div>
@@ -86,7 +86,7 @@
                 {{ this.dropdownItems }} Solo
               </div>
               <div class="card-body stats">
-                <div *ngIf="this.season == 'season 5'">
+                <div *ngIf="this.season == 'season 6'">
                   <div *ngIf="this.info.stats.curr_p2; else no_stats" class="row">
                     <div class="solo-plus-stats" style="display: inline-block" *ngFor="let stats of this.soloS5Stats">
                       <div style="display: inline-block" class="col-md-12" data-toggle="tooltip" data-placement="top" title="Rank: {{ stats[2] }}" onmouseenter="$(this).tooltip('show')">
@@ -99,7 +99,7 @@
                     </div>
                   </div>
                 </div>
-                <div *ngIf="this.season == 'season 4'">
+                <div *ngIf="this.season == 'season 5'">
                   <div *ngIf="this.info.stats.p2; else no_stats" class="row">
                     <div class="solo-plus-stats" style="display: inline-block" *ngFor="let stats of this.soloStats">
                       <div style="display: inline-block" class="col-md-12" data-toggle="tooltip" data-placement="top" title="Rank: {{ stats[2] }}" onmouseenter="$(this).tooltip('show')">
@@ -123,7 +123,7 @@
                 {{ this.dropdownItems }} Duo
               </div>
               <div class="card-body stats">
-                <div *ngIf="this.season == 'season 5'">
+                <div *ngIf="this.season == 'season 6'">
                   <div *ngIf="this.info.stats.curr_p10; else no_stats" class="row">
                     <div class="solo-plus-stats" style="display: inline-block" *ngFor="let stats of this.duoS5Stats">
                       <div style="display: inline-block" class="col-md-12" data-toggle="tooltip" data-placement="top" title="Rank: {{ stats[2] }}" onmouseenter="$(this).tooltip('show')">
@@ -136,7 +136,7 @@
                     </div>
                   </div>
                 </div>
-                <div *ngIf="this.season == 'season 4'">
+                <div *ngIf="this.season == 'season 5'">
                   <div *ngIf="this.info.stats.p10; else no_stats">
                     <div class="solo-plus-stats" style="display: inline-block" *ngFor="let stats of this.duoStats">
                       <div style="display: inline-block" class="col-md-12" data-toggle="tooltip" data-placement="top" title="Rank: {{ stats[2] }}" onmouseenter="$(this).tooltip('show')">
@@ -160,7 +160,7 @@
                 {{ this.dropdownItems }} Squad
               </div>
               <div class="card-body stats">
-                <div *ngIf="this.season == 'season 5'">
+                <div *ngIf="this.season == 'season 6'">
                   <div *ngIf="this.info.stats.curr_p9; else no_stats" class="row">
                     <div class="solo-plus-stats" style="display: inline-block" *ngFor="let stats of this.squadS5Stats">
                       <div style="display: inline-block" class="col-md-12" data-toggle="tooltip" data-placement="top" title="Rank: {{ stats[2] }}" onmouseenter="$(this).tooltip('show')">
@@ -173,7 +173,7 @@
                     </div>
                   </div>
                 </div>
-                <div *ngIf="this.season == 'season 4'">
+                <div *ngIf="this.season == 'season 5'">
                   <div *ngIf="this.info.stats.p9; else no_stats">
                     <div class="solo-plus-stats" style="display: inline-block" *ngFor="let stats of this.squadStats">
                       <div style="display: inline-block" class="col-md-12" data-toggle="tooltip" data-placement="top" title="Rank: {{ stats[2] }}" onmouseenter="$(this).tooltip('show')" onclick="void(0);">
